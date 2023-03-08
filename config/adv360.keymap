@@ -18,9 +18,21 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
+#define AS(keycode) &as LS(keycode) keycode
+
 / {
   behaviors {
     #include "macros.dtsi"
+
+    as: auto_shift {
+        compatible = "zmk,behavior-hold-tap";
+        label = "AUTO_SHIFT";
+        #binding-cells = <2>;
+        tapping_term_ms = <200>;
+        quick_tap_ms = <0>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp>;
+    };
 
     hm: homerow_mods {
         compatible = "zmk,behavior-hold-tap";
@@ -39,11 +51,11 @@
 
         default_layer {
             bindings = <
-   &kp ESC    &kp N1     &kp N2     &kp N3   &kp N4  &kp N5               &tog 1                                                                                &mo 3  &kp N6    &kp N7     &kp N8   &kp N9     &kp N0  &kp MINUS
-   &kp TAB     &kp Q      &kp W      &kp E    &kp R   &kp T             &kp LPAR                                                                             &kp RPAR   &kp Y     &kp U      &kp I    &kp O      &kp P   &kp BSLH
- &kp EQUAL     &kp A      &kp S      &kp D    &kp F   &kp G             &kp LBKT  &mt LEFT_CONTROL ENTER    &kp LALT   &none   &none    &kp LCMD  &kp RCTRL  &kp RBKT   &kp H     &kp J      &kp K    &kp L   &kp SEMI    &kp SQT
- &kp LSHFT     &kp Z      &kp X      &kp C    &kp V   &kp B                &none                   &none   &lt 2 DEL   &none   &none  &lt 2 CAPS      &none     &none   &kp N     &kp M  &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
- &kp GRAVE  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END                    &kp SPACE                &kp LCMD  &lt 1 BSPC                   &lt 1 DEL  &kp ENTER  &kp BSPC          &kp LEFT   &kp DOWN   &kp UP  &kp RIGHT      &mo 3
+   &kp ESC    AS(N1)     AS(N2)     AS(N3)   AS(N4)  AS(N5)               &tog 1                                                                                &mo 3  AS(N6)    AS(N7)     AS(N8)   AS(N9)     AS(N0)  AS(MINUS)
+   AS(TAB)     AS(Q)      AS(W)      AS(E)    AS(R)   AS(T)             AS(LPAR)                                                                             AS(RPAR)   AS(Y)     AS(U)      AS(I)    AS(O)      AS(P)   AS(BSLH)
+ AS(EQUAL)     AS(A)      AS(S)      AS(D)    AS(F)   AS(G)             AS(LBKT)  &mt LEFT_CONTROL ENTER    &kp LALT   &none   &none    &kp LCMD  &kp RCTRL  AS(RBKT)   AS(H)     AS(J)      AS(K)    AS(L)   AS(SEMI)    AS(SQT)
+ &kp LSHFT     AS(Z)      AS(X)      AS(C)    AS(V)   AS(B)                &none                   &none   &lt 2 LC(code)   &none   &none  &lt 2 CAPS      &none     &none   AS(N)     AS(M)  AS(COMMA)  AS(DOT)   AS(FSLH)  &kp RSHFT
+ AS(GRAVE)  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END                    &kp SPACE                &kp LCMD  &lt 1 BSPC                   &lt 1 DEL  &kp ENTER  &kp BSPC          &kp LEFT   &kp DOWN   &kp UP  &kp RIGHT      &mo 3
             >;
         };
 
