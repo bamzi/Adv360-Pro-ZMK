@@ -53,9 +53,9 @@
             bindings = <
    &kp ESC    AS(N1)     AS(N2)     AS(N3)   AS(N4)  AS(N5)               &tog 1                                                                                &mo 3  AS(N6)    AS(N7)     AS(N8)   AS(N9)     AS(N0)  AS(MINUS)
    AS(TAB)     AS(Q)      AS(W)      AS(E)    AS(R)   AS(T)             &kp LPAR                                                                             &kp RPAR   AS(Y)     AS(U)      AS(I)    AS(O)      AS(P)   AS(BSLH)
- AS(EQUAL)     AS(A)      AS(S)      AS(D)    AS(F)   AS(G)             AS(LBKT)  &mt LEFT_CONTROL ENTER    &kp LALT   &none   &none    &kp LCMD  &kp RCTRL  AS(RBKT)   AS(H)     AS(J)      AS(K)    AS(L)   AS(SEMI)    AS(SQT)
+ AS(EQUAL)     AS(A)      AS(S)      AS(D)    AS(F)   AS(G)             AS(LBKT)  &mt LC(A) ENTER    &kp LALT   &none   &none    &kp LCMD  &kp RCTRL  AS(RBKT)   AS(H)     AS(J)      AS(K)    AS(L)   AS(SEMI)    AS(SQT)
  &kp LSHFT     AS(Z)      AS(X)      AS(C)    AS(V)   AS(B)                &none                   &none   &lt 2 LC(C)   &none   &none  &lt 2 CAPS      &none     &none   AS(N)     AS(M)  AS(COMMA)  AS(DOT)   AS(FSLH)  &kp RSHFT
- AS(GRAVE)  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END                    &kp SPACE                &kp LCMD  &lt 1 BSPC                   &lt 1 DEL  &kp ENTER  &kp BSPC          &kp LEFT   &kp DOWN   &kp UP  &kp RIGHT      &mo 3
+ AS(GRAVE)  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END                    &mt LEFT_CONTROL SPACE                &mt LCMD SPACE  &lt 1 BSPC                   &lt 1 DEL  &kp ENTER  &kp BSPC          &kp LEFT   &kp DOWN   &kp UP  &kp RIGHT      &mo 3
             >;
         };
 
